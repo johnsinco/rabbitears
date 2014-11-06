@@ -1,7 +1,8 @@
 <html>
 <head>
   <title>Rabbit Ears Movie Showtimes</title>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <script src="/javascripts/angular.js"></script>
+  <script src="/javascripts/angular-resource.js"></script>
   <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script src="/javascripts/angularApp.js"></script>
@@ -21,9 +22,12 @@
   <div class="small-12 large-6 columns">
     <div ng-repeat="movie in movies | orderBy: 'releaseDate'" class="panel">
       <div class="gridtime row">
-        <div class="small-3 medium-3 large-3 columns">
+        <div class="large-12 columns">
           <p class="large">{{movie.title}}</p>
         </div>
+      </div>
+      <div class="row">
+        <div class="large-3 columns"></div>
         <div class="small-9 medium-9 large-9 columns">
           <div ng-repeat="showing in movie.showtimes">
             <div class="row">

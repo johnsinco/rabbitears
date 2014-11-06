@@ -13,6 +13,7 @@ var outputFilter = function(movie) {
 }
 
 
+
 /* GET movies listing. */
 router.get('/', function(req, res) {
 
@@ -30,16 +31,6 @@ router.get('/', function(req, res) {
       // return a filtered subset of the api data
       res.json(data.map(outputFilter));
   });
-
-  // res.json({"title": "Fury", 
-  //        "shortDescription": "A tank commander takes his men on a deadly mission to strike at the heart of Nazi Germany.",
-  //        "rating": "R",    
-  //        "releaseDate": "2014-10-17",
-  //        "showtimes": [{ "theatre": "AMC Twenty Mile 10", "time" : "2014-11-04T13:05"},
-  //                      { "theatre": "AMC Twenty Mile 10", "time" : "2014-11-04T13:05"}]
-  //        });
 });
-
-
 
 module.exports = router;
