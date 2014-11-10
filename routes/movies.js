@@ -7,6 +7,7 @@ var zip = '80134';
 
 var outputFilter = function(movie) {
   return {
+    "id" : movie.tmsId,
     "title": movie.title, "rating": (movie.ratings || [{code: 'n/a'}])[0].code, "releaseDate": movie.releaseDate, 
     "showtimes": movie.showtimes.map(function(st) { return {theatre: st.theatre.name, time: st.dateTime} } )
   }
@@ -15,11 +16,11 @@ var outputFilter = function(movie) {
 
 
 /* GET movies listing. */
-router.get('/', function(req, res) {
+router.get('/:zip', function(req, res) {
 
   // call the gracenote api
   client = new RestClient();
-
+  console.log("zip = " + req.params.zip);
   now = new Date();
   dateStr = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + String("00" + now.getDate()).slice(-2)
 

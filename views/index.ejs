@@ -3,6 +3,7 @@
   <title>Rabbit Ears Movie Showtimes</title>
   <script src="/javascripts/angular.js"></script>
   <script src="/javascripts/angular-resource.js"></script>
+  <script src="/javascripts/vendor/modernizr.js"></script>
   <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script src="/javascripts/angularApp.js"></script>
@@ -20,24 +21,25 @@
     </div>
   </div>
   <div class="small-12 large-6 columns">
-    <div ng-repeat="movie in movies | orderBy: 'releaseDate'" class="panel">
-      <div class="gridtime row">
-        <div class="large-12 columns">
-          <p class="large">{{movie.title}}</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="large-3 columns"></div>
-        <div class="small-9 medium-9 large-9 columns">
-          <div ng-repeat="showing in movie.showtimes">
-            <div class="row">
-              <p>{{showing.theatre}} - {{showing.time | date :"hh:mm a"}}</p>
+    <dl class="accordion" data-accordion>
+      <dd ng-repeat="movie in movies | orderBy: 'releaseDate'" class="accordion-navigation">
+        <a href="#{{movie.id}}_panel" class="large">{{movie.title}}</a>
+        <div id="#{{movie.id}}_panel" class="content">
+          <div class="large-12 columns">
+            <div ng-repeat="showing in movie.showtimes" class="row">
+                <p>{{showing.theatre}} - {{showing.time | date :"hh:mm a"}}</p>
             </div>
-          </div>
-         </div>
-      </div>
-    </div>
+           </div>
+        </div>
+      </dd>
+    </dl>
   </div>
-
+<script src="/javascripts/vendor/jquery.js"></script>
+<script src="/javascripts/vendor/fastclick.js"></script>
+<script src="/javascripts/foundation/foundation.js"></script>
+<script src="/javascripts/foundation/foundation.accordion.js"></script>
+<script>
+  $(document).foundation();
+</script>
 </body>
 </html>
