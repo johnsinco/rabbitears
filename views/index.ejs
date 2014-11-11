@@ -24,7 +24,7 @@
     <dl class="accordion" data-accordion>
       <dd ng-repeat="movie in movies | orderBy: 'releaseDate'" class="accordion-navigation">
         <a href="#{{movie.id}}_panel" class="large">{{movie.title}}</a>
-        <div id="{{movie.id}}_panel" class="content">
+        <div id="{{movie.id}}_panel" class="content clearfix">
           <div class="large-12 columns">
             <div ng-repeat="showing in movie.showtimes" class="row">
                 <p>{{showing.theatre}} - {{showing.time | date :"hh:mm a"}}</p>
