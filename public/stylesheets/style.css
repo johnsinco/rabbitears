@@ -6,6 +6,10 @@
   margin-bottom: 0.5rem; }
 
 p {
-  margin-bottom: 0.2rem; }
+  margin-bottom: 0.2rem;
+  font-size: 0.8rem !important; }
+
+a {
+  font-size: .6rem !important; }
 
 /*# sourceMappingURL=style.css.map */

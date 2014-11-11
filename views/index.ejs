@@ -4,7 +4,7 @@
   <script src="/javascripts/angular.js"></script>
   <script src="/javascripts/angular-resource.js"></script>
   <script src="/javascripts/vendor/modernizr.js"></script>
-  <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
+  <link rel="stylesheet" href="/stylesheets/foundation.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script src="/javascripts/angularApp.js"></script>
 </head>
@@ -23,7 +23,7 @@
   <div class="small-12 large-6 columns">
     <dl class="accordion" data-accordion>
       <dd ng-repeat="movie in movies | orderBy: 'releaseDate'" class="accordion-navigation">
-        <a href="#{{movie.id}}_panel" class="large">{{movie.title}}</a>
+        <a href="#{{movie.id}}_panel">{{movie.title}}</a>
         <div id="{{movie.id}}_panel" class="content clearfix">
           <div class="large-12 columns">
             <div ng-repeat="showing in movie.showtimes" class="row">
