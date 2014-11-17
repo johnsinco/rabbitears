@@ -1,6 +1,13 @@
+body {
+  background-color: #3A6C82; }
+
 .panel {
   padding: 0.5rem;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem;
+  background-color: #3A6C82; }
+  .panel h4 {
+    background-color: #3A6C82;
+    color: #FBF8D4 !important; }
 
 .button.tiny {
   margin-bottom: 0.5rem; }
@@ -10,6 +17,12 @@ p {
   font-size: 0.8rem !important; }
 
 a {
-  font-size: .6rem !important; }
+  font-size: .6rem !important;
+  background-color: #3A6C82 !important;
+  color: #FBF8D4 !important; }
+
+.content {
+  background: #C0D3DC !important;
+  color: #1B2E37 !important; }
 
 /*# sourceMappingURL=style.css.map */
