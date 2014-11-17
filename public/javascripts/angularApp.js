@@ -11,7 +11,7 @@ angular.module('rabbitTv', ['movieService'])
     function($scope, $http, Movies) {
       if(window.navigator.geolocation) {
         window.navigator.geolocation.getCurrentPosition(function(pos){
-          $http.get('http://maps.googleapis.com/maps/api/geocode/json?latlng='+pos.coords.latitude+','+pos.coords.longitude+'&sensor=true').then(
+          $http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng='+pos.coords.latitude+','+pos.coords.longitude+'&sensor=true').then(
             function(resp) {
               geos = resp.data.results;
               if(geos) {
